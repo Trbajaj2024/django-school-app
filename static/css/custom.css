@@ -1,0 +1,227 @@
+/* Custom CSS styles for the TRBSS project */
+
+:root {
+    --bs-primary-rgb: 78, 115, 223; /* Example primary color */
+    --bs-secondary-rgb: 133, 135, 150;
+    --bs-light-rgb: 248, 249, 252;
+    --bs-gradient: linear-gradient(135deg, rgb(var(--bs-primary-rgb)) 0%, #6f42c1 100%); /* Added gradient variable */
+    --app-section-padding: 4rem 0; /* Increased padding */
+    --app-card-border-radius: 0.5rem;
+}
+
+body {
+    font-family: 'Nunito', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    background-color: #f8f9fc; /* Light background */
+    color: #5a5c69;
+}
+
+/* --- Typography & Spacing --- */
+h2 {
+    font-weight: 700;
+    color: #3a3b45;
+}
+h2 i {
+    /* Optional: slightly smaller icon in headers */
+    font-size: 0.85em;
+}
+
+.lead {
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+
+.section-padding {
+    padding: var(--app-section-padding);
+}
+
+.mb-5 {
+    margin-bottom: 3rem !important;
+}
+
+/* --- Navbar --- */
+.navbar {
+    box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, .15)!important;
+}
+.navbar-brand {
+    font-weight: 700;
+    color: rgb(var(--bs-primary-rgb));
+}
+
+/* --- Carousel --- */
+#mainCarousel .carousel-item img,
+#mainCarousel .placeholder-image-container /* Updated placeholder class */
+{
+    height: 550px; /* Slightly taller */
+    object-fit: cover;
+    /* Removed border-radius from here, applied to parent */
+}
+
+#mainCarousel .carousel-item img {
+    filter: brightness(0.7);
+}
+
+#mainCarousel .carousel-caption {
+    background: rgba(0, 0, 0, 0.3); /* Subtle background for contrast */
+    border-radius: var(--app-card-border-radius);
+    padding: 1.5rem; /* More padding */
+    bottom: 4rem; /* Adjust position */
+    left: 10%;
+    right: 10%;
+}
+
+.text-shadow {
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+/* --- Cards --- */
+.card {
+    border: none; /* Remove default border */
+    border-radius: var(--app-card-border-radius);
+    overflow: hidden; /* Ensure image corners are rounded */
+}
+
+.hover-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-card:hover {
+    transform: translateY(-7px); /* Slightly more lift */
+    box-shadow: 0 .7rem 1.8rem rgba(58, 59, 69, .2) !important;
+}
+
+.card-img-top {
+    height: 200px; /* Fixed height for card images */
+    object-fit: cover; /* Ensure image covers the area */
+    border-bottom: 1px solid #e3e6f0;
+}
+
+.card-img-top.bg-secondary-subtle, /* Use Bootstrap's subtle background */
+.placeholder-image-container--small /* Class for card placeholders */
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    background-color: #e9ecef; /* Or use var(--bs-secondary-bg-subtle) if defined */
+}
+
+.placeholder-icon,
+.placeholder-icon--small {
+    font-size: 3rem; /* Size for large placeholder icon */
+    color: #adb5bd; /* Muted color for placeholder icon */
+}
+
+.placeholder-icon--small {
+    font-size: 2.5rem; /* Slightly smaller for cards */
+}
+
+.card .display-4 i {
+    transition: transform 0.3s ease;
+}
+
+.card:hover .display-4 i {
+    transform: scale(1.05);
+}
+
+.card-body .text-primary {
+   color: rgb(var(--bs-primary-rgb)) !important;
+}
+
+/* Ensure cards in a row have similar visual height */
+.row.g-4 {
+    display: flex;
+    flex-wrap: wrap;
+}
+.row.g-4 > [class*='col-'] {
+    display: flex;
+    flex-direction: column;
+}
+.row.g-4 .card {
+    flex: 1; /* Make card fill the column height */
+    display: flex; /* Enable flex column for card content */
+    flex-direction: column;
+}
+.row.g-4 .card .card-body {
+    flex-grow: 1; /* Allow body to grow */
+    display: flex;
+    flex-direction: column;
+}
+.row.g-4 .card .card-body p {
+    flex-grow: 1; /* Allow description paragraph to grow */
+}
+.row.g-4 .card .card-body .mt-auto {
+    margin-top: auto !important; /* Ensure button stays at bottom */
+}
+
+
+/* --- Buttons --- */
+.btn {
+    padding: 0.5rem 1rem;
+    font-weight: 600;
+    border-radius: var(--app-card-border-radius);
+}
+.btn-lg {
+    padding: 0.8rem 1.5rem;
+    font-size: 1.1rem;
+}
+.btn-primary {
+    background-color: rgb(var(--bs-primary-rgb));
+    border-color: rgb(var(--bs-primary-rgb));
+    transition: all 0.2s ease;
+    box-shadow: 0 0.1rem 0.5rem rgba(var(--bs-primary-rgb), 0.3);
+}
+
+.btn-primary:hover {
+    background-color: darken(rgb(var(--bs-primary-rgb)), 8%);
+    border-color: darken(rgb(var(--bs-primary-rgb)), 10%);
+    transform: translateY(-2px);
+    box-shadow: 0 0.3rem 0.8rem rgba(var(--bs-primary-rgb), 0.4);
+
+}
+
+/* --- Specific Sections --- */
+.bg-light {
+    background-color: rgb(var(--bs-light-rgb)) !important;
+}
+
+.bg-primary.text-white .card {
+    /* box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, .15)!important; */
+     box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important; /* Standard shadow for cards on dark bg */
+
+}
+
+/* Style for the enhanced CTA section */
+.bg-gradient-primary-to-secondary {
+    background: var(--bs-gradient) !important;
+}
+
+/* --- Footer --- */
+footer.bg-light {
+    background-color: #fff !important; /* White footer */
+    border-top: 1px solid #e3e6f0;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    color: #858796;
+}
+
+footer a {
+    color: rgb(var(--bs-primary-rgb));
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Placeholder image container styles */
+.placeholder-image-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 550px; /* Match carousel image height */
+}
+
+.placeholder-image-container--small {
+     height: 200px; /* Match card image height */
+} 

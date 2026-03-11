@@ -1,0 +1,29 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Admissions - TRBSS{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <h1 class="mb-4">Admissions Information</h1>
+    <p class="lead">Welcome to the admissions page. Information about the application process will be available here soon.</p>
+    
+    <hr class="my-4">
+
+    <h2>Application Form (Placeholder)</h2>
+    <p>A form to apply will be embedded here in the future.</p>
+    <!-- Example: You might use Django Forms here later -->
+    <form>
+        <div class="mb-3">
+            <label for="exampleInputName" class="form-label">Your Name</label>
+            <input type="text" class="form-control" id="exampleInputName">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit Inquiry (Non-functional)</button>
+    </form>
+
+</div>
+{% endblock %} 
